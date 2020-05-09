@@ -2,8 +2,12 @@
 
 const mongoose = require('mongoose');
 
+
 //connect to the database
-mongoose.connect('mongodb://localhost/Hospital_API',{useNewUrlParser:true});
+mongoose.connect('mongodb://localhost/Hospital_API',{
+    useNewUrlParser:true,
+    useUnifiedTopology:true
+});
 
 //check connection
 const db = mongoose.connection;

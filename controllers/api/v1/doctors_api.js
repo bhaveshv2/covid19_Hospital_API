@@ -46,7 +46,6 @@ module.exports.createSession = async function(req, res){
     //Whenever username and password received, we need to find that user and generate the jwt
     try{
         let doctor = await Doctor.findOne({username:req.body.username});
-        console.log(doctor);
         if(!doctor || doctor.password!=req.body.password){
             return req.status(422).json({
                 message:"Invalid username or password"

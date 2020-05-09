@@ -7,9 +7,11 @@ module.exports.reportsByStatus = async function(req,res){
         let reports = await Report.find({status:req.params.status},'doctor patient status date')
         .populate({
             path:'doctor',
+            select:'name username'
         })
         .populate({
-            path:'patient'
+            path:'patient',
+            select:'name phoneno'
         });
 
         return res.status(200).json({

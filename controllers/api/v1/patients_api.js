@@ -26,7 +26,7 @@ module.exports.register = async function(req,res){
         }else{
             return res.status(200).json({
                 message:'Patient already Exist! Details:',
-                patient:patient                
+                patient:existPatient                
             });
         }
     }catch(err){
@@ -44,24 +44,17 @@ module.exports.createReport = async function(req,res){
         let doctor = await Doctor.findById(req.user.id);
 
         if(patient && doctor){
-            // //Set the Status (in the enum array of the models)
-            // let statusEnum = ['Negative','Travelled-Quarantine','Symptoms-Quarantine','Positive'];
-            // //select status randomly from the above array(for our own purpose)
-            // let status = statusEnum[Math.floor(Math.random()*statusEnum.length)];
-
-            //current date 
-
             let status=req.body.status;
             let date = req.body.date;
 
-            let report = Report.create({
+            let report = await Report.create({
                 doctor:doctor._id,
-                patient:patient._id,
+                patient:req.params.id,
                 status:status,
                 date:date
             });
 
-            patient.report.push(report.id);
+            patient.reports.push(report._id);
             patient.save();
 
             return res.status(200).json({

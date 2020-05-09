@@ -4,12 +4,12 @@ const mongoose = require('mongoose');
 const reportSchema = new mongoose.Schema({
     //storing the doctors id only
     doctor:{
-        type:mongoose.Schema.ObjectId,
+        type:mongoose.Schema.Types.ObjectId,
         ref:'Doctor'
     },
     patient:{
-        type:mongoose.Schema.ObjectId,
-        ref:'Doctor'
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Patient'
     },
     date:{
         type:String,

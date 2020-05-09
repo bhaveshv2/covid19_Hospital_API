@@ -11,11 +11,6 @@ const passportJwt = require('./config/passport-jwt-strategy');     //JWT configu
 //URL encorder method call 
 app.use(express.urlencoded());
 
-//Passport initialisation so that exchange of session can happen
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(passport.setAuthenticatedUser);
-
 //Routers folder
 app.use('/', require('./routes'));
 
