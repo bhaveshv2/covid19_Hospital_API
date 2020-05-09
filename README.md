@@ -25,11 +25,11 @@ An API for the creating doctors & patients and retrieving the details of patient
 1. Clone this repository.
 2. Install above given dependencies.
 3. For Naive testing, (base url - http://localhost:8000
-    3.1. Start the server by 'npm start' and test using postman services
+   -3.1. Start the server by 'npm start' and test using postman services
 4. For whole unit testing use 'Mocha' & 'Chai',
-    4.1. The token bearer, use the postman service(For further testing of api).
-    4.2. Use that token bearer into the testing in the variable 'token' in the patient_Test.js file.
-    4.3. Start the unit testing by 'npm test'.
+   -4.1. The token bearer, use the postman service(For further testing of api).
+   -4.2. Use that token bearer into the testing in the variable 'token' in the patient_Test.js file.
+   -4.3. Start the unit testing by 'npm test'.
 
 ## Routes Used
 ```
