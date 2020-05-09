@@ -1,6 +1,7 @@
 // Collection for the Doctors
 const mongoose = require('mongoose');
 
+//creating doctors schema
 const doctorSchema = new mongoose.Schema({
     name:{
         type:String,
@@ -20,6 +21,7 @@ const doctorSchema = new mongoose.Schema({
     timestamps:true
 });
 
+//creating the model and exports
 const Doctor = mongoose.model('Doctor',doctorSchema);
 module.exports = Doctor;
 

@@ -3,14 +3,16 @@ const mongoose = require('mongoose');
 
 const reportSchema = new mongoose.Schema({
     //storing the doctors id only
-    doctor:[
-        {
-            type:mongoose.Schema.ObjectId,
-            ref:'Doctor'
-        }
-    ],
+    doctor:{
+        type:mongoose.Schema.ObjectId,
+        ref:'Doctor'
+    },
+    patient:{
+        type:mongoose.Schema.ObjectId,
+        ref:'Doctor'
+    },
     date:{
-        type:Date
+        type:String,
     },
     status:{
         type:String,
@@ -21,5 +23,6 @@ const reportSchema = new mongoose.Schema({
     timestamps:true,
 });
 
+//creating the model and exports
 const Report = mongoose.model('Report',reportSchema);
 module.exports = Report;

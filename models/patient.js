@@ -15,7 +15,7 @@ const patientSchema = new mongoose.Schema({
         required:true,
         unique:true,
     },
-    report:[
+    reports:[
         {
             type:mongoose.Schema.ObjectId,
             ref:'Report',
@@ -25,5 +25,6 @@ const patientSchema = new mongoose.Schema({
     timestamps:true,
 });
 
+//creating the model and exports
 const Patient = mongoose.model('Patient',patientSchema);
 module.exports = Patient;
