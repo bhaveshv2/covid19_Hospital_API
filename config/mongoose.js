@@ -1,13 +1,11 @@
 //Mongoose configuration File for the creating the database and connect to it.
 
 const mongoose = require('mongoose');
+const config = require('config');
 
 
 //connect to the database
-mongoose.connect('mongodb://localhost/Hospital_API',{
-    useNewUrlParser:true,
-    useUnifiedTopology:true
-});
+mongoose.connect(config.DBHost,{useNewUrlParser:true});
 
 //check connection
 const db = mongoose.connection;

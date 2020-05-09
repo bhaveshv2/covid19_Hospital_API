@@ -85,7 +85,8 @@ module.exports.allReports = async function(req,res){
 
         //responding json format of reports
         return res.status(200).json({
-            message:'All reports of'+reports.eventNames,
+            patientMobile:reports.phoneno,
+            message:'All reports of'+reports.phoneno,
             reports:reports.reports
         })
     }catch(err){
